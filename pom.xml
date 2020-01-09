@@ -19,10 +19,9 @@
         <module>im</module>
         <module>common</module>
         <module>user</module>
-        <module>user-api</module>
         <module>user/user-api</module>
-        <module>user/user-server</module>
         <module>user/user-service</module>
+        <module>api-gateway</module>
     </modules>
 
     <properties>
@@ -47,6 +46,7 @@
         <jwt.version>0.6.0</jwt.version>
         <pagehelper.version>5.1.2</pagehelper.version>
         <protobuf.version>3.11.1</protobuf.version>
+        <nsq.version>1.0.0.RC4</nsq.version>
     </properties>
 
     <dependencies>

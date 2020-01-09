@@ -11,13 +11,15 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class WSServer implements ApplicationListener<ContextRefreshedEvent>
+public class WSServer implements ApplicationRunner
 {
     private EventLoopGroup mainGroup;
     private EventLoopGroup subGroup;
@@ -52,11 +54,8 @@ public class WSServer implements ApplicationListener<ContextRefreshedEvent>
     }
 
     @Override
-    public void onApplicationEvent(ContextRefreshedEvent refreshedEvent)
+    public void run(ApplicationArguments args) throws Exception
     {
-        if (refreshedEvent.getApplicationContext().getParent() == null)
-        {
-            this.startWs();
-        }
+        this.startWs();
     }
 }
