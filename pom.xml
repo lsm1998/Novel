@@ -47,10 +47,18 @@
         <pagehelper.version>5.1.2</pagehelper.version>
         <protobuf.version>3.11.1</protobuf.version>
         <nsq.version>1.0.0.RC4</nsq.version>
+        <codec.version>1.13</codec.version>
+        <bouncycastle.version>1.64</bouncycastle.version>
     </properties>
 
     <dependencies>
         <!-- 基本依赖父工程直接导入 -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>${bouncycastle.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -80,6 +88,12 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${codec.version}</version>
         </dependency>
 
         <dependency>

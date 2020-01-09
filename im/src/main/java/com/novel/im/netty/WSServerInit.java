@@ -15,6 +15,13 @@ import io.netty.handler.stream.ChunkedWriteHandler;
 
 public class WSServerInit extends ChannelInitializer<SocketChannel>
 {
+    private String path;
+
+    public WSServerInit(String path)
+    {
+        this.path = path;
+    }
+
     @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception
     {
@@ -24,13 +31,13 @@ public class WSServerInit extends ChannelInitializer<SocketChannel>
         // 对写大数据流的支持
         pipeline.addLast(new ChunkedWriteHandler());
         // 对HttpMessage聚合，聚合为FullHttpReq和FullHttpRsp
-        pipeline.addLast(new HttpObjectAggregator(1024*64));
+        pipeline.addLast(new HttpObjectAggregator(1024 * 64));
 
         // ws服务器处理的协议，指定路由，处理ws握手，ping+pong=心跳
         // ws协议数据以frames传输，不同的数据类型对应不同的frames
-        pipeline.addLast(new WebSocketServerProtocolHandler("/chat"));
+        pipeline.addLast(new WebSocketServerProtocolHandler("/im"));
 
         // 自定义handler
-        pipeline.addLast(new ChatHandler());
+        pipeline.addLast(new MsgHandler());
     }
 }

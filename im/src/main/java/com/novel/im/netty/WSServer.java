@@ -11,6 +11,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.ApplicationListener;
@@ -21,6 +22,11 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class WSServer implements ApplicationRunner
 {
+    @Value("${im.port}")
+    private int port;
+    @Value("${im.path}")
+    private String path;
+
     private EventLoopGroup mainGroup;
     private EventLoopGroup subGroup;
     private ServerBootstrap server;
@@ -33,14 +39,14 @@ public class WSServer implements ApplicationRunner
         server = new ServerBootstrap();
         server.group(mainGroup, subGroup)
                 .channel(NioServerSocketChannel.class)
-                .childHandler(new WSServerInit());
+                .childHandler(new WSServerInit(path));
     }
 
     public void startWs()
     {
         try
         {
-            future = server.bind(8000).sync();
+            future = server.bind(port).sync();
             log.info("ws server start...");
             future.channel().closeFuture().sync();
         } catch (Exception e)
@@ -56,6 +62,6 @@ public class WSServer implements ApplicationRunner
     @Override
     public void run(ApplicationArguments args) throws Exception
     {
-        this.startWs();
+        new Thread(this::startWs).start();
     }
 }

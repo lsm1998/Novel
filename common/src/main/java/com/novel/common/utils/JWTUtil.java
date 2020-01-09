@@ -13,7 +13,7 @@ import java.util.UUID;
 public class JWTUtil
 {
     private static final String subject = "root";
-    private static final String secret = "leyou.project";
+    private static final String secret = "novel.project";
     private static final long outMillis = 2 * 60 * 60 * 1000;
 
     /**

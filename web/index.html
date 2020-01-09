@@ -19,7 +19,7 @@
         socket: null,
         init: function () {
             if (window.WebSocket) {
-                CHAT.socket = new WebSocket("ws://localhost:8000/chat");
+                CHAT.socket = new WebSocket("ws://localhost:8000/im");
                 CHAT.socket.onopen = function () {
                     console.log("连接服务器成功");
                 };
