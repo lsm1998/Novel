@@ -17,6 +17,7 @@ public class ResultUtil
     public static final String limitResult;
     public static final String timeOutResult;
     public static final String errorResult;
+    public static final String metadataResult;
 
     static
     {
@@ -32,6 +33,10 @@ public class ResultUtil
         error.code = 10000;
         error.info = "错误请求";
         errorResult = gson.toJson(error);
+        Result metadata = new Result();
+        metadata.code = 10003;
+        metadata.info = "缺少请求元数据";
+        metadataResult = gson.toJson(metadata);
     }
 
     @Data

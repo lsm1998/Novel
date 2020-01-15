@@ -22,6 +22,9 @@
         <module>user/user-api</module>
         <module>user/user-service</module>
         <module>api-gateway</module>
+        <module>reptile</module>
+        <module>reptile/reptile-api</module>
+        <module>reptile/reptile-service</module>
     </modules>
 
     <properties>
@@ -49,6 +52,7 @@
         <nsq.version>1.0.0.RC4</nsq.version>
         <codec.version>1.13</codec.version>
         <bouncycastle.version>1.64</bouncycastle.version>
+        <servlet.version>4.0.1</servlet.version>
     </properties>
 
     <dependencies>
@@ -64,6 +68,13 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
             <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

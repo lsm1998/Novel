@@ -25,5 +25,5 @@ public class Msg implements Serializable
     // 消息内容
     private String content;
     // 创建时间
-    private long creatTime;
+    private long createTime;
 }

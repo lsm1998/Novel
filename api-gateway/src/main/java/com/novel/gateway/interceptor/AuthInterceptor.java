@@ -5,6 +5,7 @@
  */
 package com.novel.gateway.interceptor;
 
+import com.novel.common.utils.ObjectUtil;
 import com.novel.common.utils.ResultUtil;
 import com.novel.gateway.logic.AddersLogic;
 import com.novel.gateway.utils.AuthUtil;
@@ -29,9 +30,19 @@ public class AuthInterceptor implements HandlerInterceptor
         {
             return true;
         }
+
         // 请求头获取token和uid
         String token = request.getHeader("token");
         String uid = request.getHeader("uid");
+        String versions = request.getHeader("versions");
+        String device = request.getHeader("device");
+        if(ObjectUtil.isNull(token,uid,versions,device))
+        {
+            response.setContentType("text/json;charset=UTF-8");
+            response.getWriter().println(ResultUtil.metadataResult);
+            return false;
+        }
+
         switch (AuthUtil.VerifyToken(token, uid))
         {
             case VERIFY_OK:

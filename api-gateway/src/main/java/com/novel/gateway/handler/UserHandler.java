@@ -11,6 +11,8 @@ import com.novel.user.service.RPCUserService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("api/v1/user")
 public class UserHandler
@@ -20,8 +22,9 @@ public class UserHandler
 
     @LogInterceptJoinPoint
     @GetMapping("test")
-    public Object test(String name)
+    public Object test(String name, String versions, HttpServletRequest request)
     {
+        System.out.println("versions="+request.getAttribute("versions"));
         return ResultUtil.success(userService.hello(name));
     }
 }

@@ -56,7 +56,7 @@ public class MsgHandler extends ChannelInboundHandlerAdapter
     private void handshake(Integer formId, String token, ChannelHandlerContext ctx)
     {
         Msg msg = new Msg();
-        msg.setCreatTime(System.currentTimeMillis());
+        msg.setCreateTime(System.currentTimeMillis());
         if (token.equals("abc"))
         {
             msg.setCmd(1);
@@ -86,7 +86,7 @@ public class MsgHandler extends ChannelInboundHandlerAdapter
             msg.setCmd(5);
             msg.setFormId(formId);
             msg.setToId(toId);
-            msg.setCreatTime(System.currentTimeMillis());
+            msg.setCreateTime(System.currentTimeMillis());
             UserBean formUserBean = userBeanMap.get(formId);
             UserBean toUserBean = userBeanMap.get(toId);
             // 把消息解密出来
