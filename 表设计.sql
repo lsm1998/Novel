@@ -17,6 +17,8 @@ DROP TABLE IF EXISTS `t_user_details`;
 CREATE TABLE `t_user_details` (
   `uid` int(11) NOT NULL,
   `head_img` varchar(155) NOT NULL,
+  `phone` char(11) NOT NULL,
+  `login_type` tinyint(4) NOT NULL,
   `birthday` int(11) NOT NULL,
   `region` varchar(255) NOT NULL,
   `nation` varchar(55) NOT NULL,
@@ -33,7 +35,7 @@ CREATE TABLE `t_collection` (
   `id` bigint(20) NOT NULL,
   `uid` int(11) NOT NULL,
   `type` tinyint(1) NOT NULL,
-  `novel_id` bigint(20) NOT NULL,
+  `book_id` bigint(20) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `create_time` int(11) NOT NULL,
   `update_time` int(11) NOT NULL,
@@ -88,19 +90,19 @@ CREATE TABLE `t_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-DROP TABLE IF EXISTS `t_novel_author`;
-CREATE TABLE `t_novel_author` (
+DROP TABLE IF EXISTS `t_book_author`;
+CREATE TABLE `t_book_author` (
   `id` bigint(20) NOT NULL,
   `user_id` bigint(11) NOT NULL,
-  `novel_id` bigint(155) NOT NULL,
+  `book_id` bigint(155) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `create_time` int(11) NOT NULL,
   `update_time` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-DROP TABLE IF EXISTS `t_novel`;
-CREATE TABLE `t_novel` (
+DROP TABLE IF EXISTS `t_book`;
+CREATE TABLE `t_book` (
   `id` bigint(20) NOT NULL,
   `type_id` bigint(11) NOT NULL,
   `title` varchar(55) NOT NULL,
@@ -110,6 +112,7 @@ CREATE TABLE `t_novel` (
   `click` int(11) NOT NULL,
   `collection` int(11) NOT NULL,
   `instalments` tinyint(1) NOT NULL,
+  `word_num` bigint(20) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `create_time` int(11) NOT NULL,
   `update_time` int(11) NOT NULL,
@@ -119,7 +122,7 @@ CREATE TABLE `t_novel` (
 DROP TABLE IF EXISTS `t_chapter`;
 CREATE TABLE `t_chapter` (
   `id` bigint(20) NOT NULL,
-  `novel_id` bigint(11) NOT NULL,
+  `book_id` bigint(11) NOT NULL,
   `sorted` int(11) NOT NULL,
   `name` varchar(55) NOT NULL,
   `content` mediumtext NOT NULL,
@@ -133,7 +136,7 @@ DROP TABLE IF EXISTS `t_record`;
 CREATE TABLE `t_record` (
   `id` bigint(20) NOT NULL,
   `uid` int(11) NOT NULL,
-  `novel_id` bigint(20) NOT NULL,
+  `book_id` bigint(20) NOT NULL,
   `chapter_id` bigint(20) NOT NULL,
   `page` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL,
