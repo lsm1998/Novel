@@ -25,6 +25,7 @@
         <module>reptile</module>
         <module>reptile/reptile-api</module>
         <module>reptile/reptile-service</module>
+        <module>ktdb</module>
     </modules>
 
     <properties>

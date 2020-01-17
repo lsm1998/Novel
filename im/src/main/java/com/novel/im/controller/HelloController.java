@@ -5,7 +5,7 @@
  */
 package com.novel.im.controller;
 
-import com.novel.im.utils.ResultUtil;
+import com.novel.common.utils.ResultUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

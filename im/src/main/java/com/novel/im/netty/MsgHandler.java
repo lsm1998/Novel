@@ -89,7 +89,7 @@ public class MsgHandler extends ChannelInboundHandlerAdapter
             msg.setCreateTime(System.currentTimeMillis());
             UserBean formUserBean = userBeanMap.get(formId);
             UserBean toUserBean = userBeanMap.get(toId);
-            // 把消息解密出来
+            // 消息解密
             String temp = AESUtil.aesPKCS7PaddingDecrypt(content, formUserBean.getAesKey());
             msg.setContent(AESUtil.aesPKCS7PaddingEncrypt(temp, toUserBean.getAesKey()));
             toUserBean.getChannel().writeAndFlush(MsgUtil.msgToStr(msg));

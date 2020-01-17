@@ -5,6 +5,7 @@
  */
 package com.novel.gateway.handler;
 
+import com.novel.common.utils.MetadataUtil;
 import com.novel.common.utils.ResultUtil;
 import com.novel.gateway.aspect.annotation.LogInterceptJoinPoint;
 import com.novel.user.service.RPCUserService;
@@ -22,9 +23,9 @@ public class UserHandler
 
     @LogInterceptJoinPoint
     @GetMapping("test")
-    public Object test(String name, String versions, HttpServletRequest request)
+    public Object test(String name, HttpServletRequest request)
     {
-        System.out.println("versions="+request.getAttribute("versions"));
+        System.out.println("versions="+ MetadataUtil.getVersions(request));
         return ResultUtil.success(userService.hello(name));
     }
 }
