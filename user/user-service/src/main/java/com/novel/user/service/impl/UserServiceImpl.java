@@ -5,6 +5,8 @@
  */
 package com.novel.user.service.impl;
 
+import com.novel.common.domain.user.User;
+import com.novel.common.domain.user.UserDetails;
 import com.novel.user.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +17,23 @@ public class UserServiceImpl implements UserService
     public String hello(String name)
     {
         return String.format("你好啊，%s", name);
+    }
+
+    @Override
+    public String login(String username, String password)
+    {
+        return null;
+    }
+
+    @Override
+    public String flushToken(String token)
+    {
+        return null;
+    }
+
+    @Override
+    public int register(User user, UserDetails details)
+    {
+        return 0;
     }
 }

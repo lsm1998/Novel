@@ -158,3 +158,13 @@ CREATE TABLE `t_message` (
   `update_time` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+DROP TABLE IF EXISTS `t_label`;
+CREATE TABLE `t_label` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(55) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `create_time` int(11) NOT NULL,
+  `update_time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

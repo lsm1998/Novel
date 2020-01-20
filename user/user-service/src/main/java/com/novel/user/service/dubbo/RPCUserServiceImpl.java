@@ -5,6 +5,8 @@
  */
 package com.novel.user.service.dubbo;
 
+import com.novel.common.domain.user.User;
+import com.novel.common.domain.user.UserDetails;
 import com.novel.user.service.RPCUserService;
 import com.novel.user.service.UserService;
 import org.apache.dubbo.config.annotation.Service;
@@ -20,5 +22,23 @@ public class RPCUserServiceImpl implements RPCUserService
     public String hello(String name)
     {
         return userService.hello(name);
+    }
+
+    @Override
+    public String login(String username, String password)
+    {
+        return null;
+    }
+
+    @Override
+    public String flushToken(String token)
+    {
+        return null;
+    }
+
+    @Override
+    public int register(User user, UserDetails details)
+    {
+        return 0;
     }
 }

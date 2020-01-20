@@ -25,9 +25,10 @@
         <module>reptile</module>
         <module>reptile/reptile-api</module>
         <module>reptile/reptile-service</module>
-        <module>ktdb</module>
         <module>book</module>
         <module>book/book-api</module>
+        <module>im/im-api</module>
+        <module>im/im-service</module>
     </modules>
 
     <properties>
@@ -56,6 +57,8 @@
         <codec.version>1.13</codec.version>
         <bouncycastle.version>1.64</bouncycastle.version>
         <servlet.version>4.0.1</servlet.version>
+        <netty.version>4.1.44.Final</netty.version>
+        <mybatisplus.version>3.3.0</mybatisplus.version>
     </properties>
 
     <dependencies>

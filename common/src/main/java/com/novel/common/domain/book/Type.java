@@ -11,6 +11,7 @@ public class Type implements Serializable
     private Long pid;
     private String pic;
     private String name;
+    private Integer status;
     private Integer createTime;
     private Integer updateTime;
 }

@@ -17,4 +17,10 @@ public class User implements Serializable
     private String username;
     private String password;
     private String nickname;
+    private String salt;
+    private Integer type;
+    private String publicKey;
+    private Integer status;
+    private Integer createTime;
+    private Integer updateTime;
 }

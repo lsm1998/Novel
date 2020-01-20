@@ -12,6 +12,7 @@
     <artifactId>book</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>book-api</module>
         <module>book-service</module>
     </modules>
 

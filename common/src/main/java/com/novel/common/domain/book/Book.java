@@ -17,6 +17,7 @@ public class Book implements Serializable
     private Integer collection;
     private Integer instalments;
     private Long wordNum;
+    private Integer status;
     private Integer createTime;
     private Integer updateTime;
 }

@@ -14,7 +14,7 @@ public class Msg implements Serializable
 {
     // 消息ID
     private int id;
-    // 消息命令，1握手，2私聊，3群发，4广播，5ACK确认
+    // 消息命令，0ACK确认，1握手，2私聊，3群发，4系统消息，5系统广播
     private int cmd;
     // 消息长度
     private int len;
@@ -24,6 +24,10 @@ public class Msg implements Serializable
     private int toId;
     // 消息内容
     private String content;
+    // 是否删除
+    private Integer status;
     // 创建时间
-    private long createTime;
+    private Integer createTime;
+    // 更新时间
+    private Integer updateTime;
 }
