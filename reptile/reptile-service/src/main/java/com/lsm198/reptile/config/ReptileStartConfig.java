@@ -17,6 +17,9 @@ public class ReptileStartConfig implements ApplicationRunner
     public void run(ApplicationArguments args) throws Exception
     {
         System.out.println("爬虫任务开始。。。");
+        String url = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2015/index.html";
+        String type = "provincetr";
+        System.out.println(new ReptileStartConfig().getProvice(url, type));
     }
 
     //根据url获取数据
@@ -91,12 +94,5 @@ public class ReptileStartConfig implements ApplicationRunner
             }
         }
         return result;
-    }
-
-    public static void main(String[] args)
-    {
-        String url = "http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2015/index.html";
-        String type = "provincetr";
-        System.out.println(new ReptileStartConfig().getProvice(url, type));
     }
 }

@@ -1,6 +1,7 @@
 package com.lsm198.reptile.service;
 
-public interface NovelService {
+public interface NovelService
+{
     // 爬取所有
     void reptileNovelAll();
 
