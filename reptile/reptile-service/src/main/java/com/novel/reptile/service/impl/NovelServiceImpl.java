@@ -1,6 +1,6 @@
-package com.lsm198.reptile.service.impl;
+package com.novel.reptile.service.impl;
 
-import com.lsm198.reptile.service.NovelService;
+import com.novel.reptile.service.NovelService;
 import org.springframework.stereotype.Service;
 
 @Service

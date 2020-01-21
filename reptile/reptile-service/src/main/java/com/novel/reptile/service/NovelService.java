@@ -1,4 +1,4 @@
-package com.lsm198.reptile.service;
+package com.novel.reptile.service;
 
 public interface NovelService
 {

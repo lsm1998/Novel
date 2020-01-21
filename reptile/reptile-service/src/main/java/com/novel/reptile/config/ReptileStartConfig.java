@@ -1,4 +1,4 @@
-package com.lsm198.reptile.config;
+package com.novel.reptile.config;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

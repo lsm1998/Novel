@@ -168,3 +168,16 @@ CREATE TABLE `t_label` (
   `update_time` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+DROP TABLE IF EXISTS `t_comment`;
+CREATE TABLE `t_comment` (
+  `id` bigint(20) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `content` varchar(55) NOT NULL,
+  `book_id` bigint(20) NOT NULL,
+  `reply_id` bigint(20) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `create_time` int(11) NOT NULL,
+  `update_time` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

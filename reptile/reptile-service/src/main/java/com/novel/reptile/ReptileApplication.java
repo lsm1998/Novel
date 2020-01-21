@@ -1,4 +1,4 @@
-package com.lsm198.reptile;
+package com.novel.reptile;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
