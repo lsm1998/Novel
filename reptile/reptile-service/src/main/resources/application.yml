@@ -12,26 +12,7 @@ nsq:
 
 spring:
   application:
-    name: novel-service-user
-  redis:
-    password:
-    database: 0
-    timeout: 5000
-    host: 47.95.239.29
-    port: 6379
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.95.239.29:3306/novel?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
-    username: root
-    password: root
-    type: com.alibaba.druid.pool.DruidDataSource
-    initialSize: 10
-    minIdle: 10
-    maxActive: 20
-    maxWait: 6000
-    validationQuery: SELECT 1 FROM DUAL
-    filters: stat,wall
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    name: novel-service-reptile
 
 # 日志配置
 logging:
@@ -49,11 +30,11 @@ dubbo:
     address: nacos://${nacos.service-address}:${nacos.port}
   protocol:
     name: dubbo
-    port: 20010
+    port: 20030
   scan:
-    base-packages: com.novel.user.service.dubbo
+    base-packages: com.novel.reptile.service.dubbo
 
 # 雪花算法配置
 snowflake:
-  machine-id: 1
-  app-id: 0
+  machine-id: 0
+  app-id: 3

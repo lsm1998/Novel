@@ -1,11 +1,10 @@
 package com.novel.common.domain.book;
 
+import com.novel.common.domain.BaseEntity;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class Book implements Serializable
+public class Book extends BaseEntity
 {
     private Long id;
     private Long typeId;
@@ -17,7 +16,4 @@ public class Book implements Serializable
     private Integer collection;
     private Integer instalments;
     private Long wordNum;
-    private Integer status;
-    private Integer createTime;
-    private Integer updateTime;
 }

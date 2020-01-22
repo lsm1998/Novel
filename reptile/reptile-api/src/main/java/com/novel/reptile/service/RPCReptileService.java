@@ -5,7 +5,9 @@
  */
 package com.novel.reptile.service;
 
+import java.util.List;
+
 public interface RPCReptileService
 {
-
+    List<String> search(String keyword, int size);
 }
