@@ -1,11 +1,12 @@
 package com.novel.common.domain.user;
 
+import com.novel.common.domain.BaseEntity;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
-public class UserDetails implements Serializable
+public class UserDetails extends BaseEntity
 {
     private Integer uid;
     private String headImg;
@@ -15,7 +16,4 @@ public class UserDetails implements Serializable
     private String region;
     private String nation;
     private String autograph;
-    private Integer status;
-    private Integer createTime;
-    private Integer updateTime;
 }

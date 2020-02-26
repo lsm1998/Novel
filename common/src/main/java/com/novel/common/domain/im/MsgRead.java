@@ -5,20 +5,15 @@
  */
 package com.novel.common.domain.im;
 
+import com.novel.common.domain.BaseEntity;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
-public class MsgRead implements Serializable
+public class MsgRead extends BaseEntity
 {
     private Long id;
     private Integer uid;
     private Long msgId;
-    // 1已读，2删除
-    private Integer status;
-    // 创建时间
-    private Integer createTime;
-    // 更新时间
-    private Integer updateTime;
 }

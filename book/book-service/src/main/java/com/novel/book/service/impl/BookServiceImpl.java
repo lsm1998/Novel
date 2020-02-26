@@ -6,7 +6,7 @@
 package com.novel.book.service.impl;
 
 import com.novel.book.mapper.BookMapper;
-import com.novel.user.service.BookService;
+import com.novel.book.service.BookService;
 import com.novel.book.utils.ConditionUtil;
 import com.novel.common.domain.book.Book;
 import com.novel.common.utils.Snowflake;

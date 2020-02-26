@@ -1,17 +1,13 @@
 package com.novel.common.domain.book;
 
+import com.novel.common.domain.BaseEntity;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class Type implements Serializable
+public class Type extends BaseEntity
 {
     private Long id;
     private Long pid;
     private String pic;
     private String name;
-    private Integer status;
-    private Integer createTime;
-    private Integer updateTime;
 }

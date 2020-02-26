@@ -5,19 +5,15 @@
  */
 package com.novel.common.domain.user;
 
+import com.novel.common.domain.BaseEntity;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class Account implements Serializable
+public class Account extends BaseEntity
 {
     private Long id;
     private Integer uid;
     private Long accountBalance;
     private Long monthlyBalance;
     private Long recommendBalance;
-    private Integer status;
-    private Integer createTime;
-    private Integer updateTime;
 }

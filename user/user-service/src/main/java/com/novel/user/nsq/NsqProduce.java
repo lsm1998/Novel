@@ -34,6 +34,11 @@ public class NsqProduce
         this.nsqProducer.addAddress(nsqHost, nsqPort).start();
     }
 
+    public void produce(byte[] data) throws NSQException, TimeoutException
+    {
+        this.nsqProducer.produce(nsqTopic, data);
+    }
+
     public void produce(String msg) throws NSQException, TimeoutException
     {
         this.nsqProducer.produce(nsqTopic, msg.getBytes());

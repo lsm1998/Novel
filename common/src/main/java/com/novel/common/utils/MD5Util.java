@@ -14,7 +14,6 @@ public class MD5Util
 {
     public static final int SALT_LEN = 10;
 
-
     public static String md5(String str)
     {
         try

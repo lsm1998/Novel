@@ -5,16 +5,12 @@
  */
 package com.novel.common.domain.book;
 
+import com.novel.common.domain.BaseEntity;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class Label implements Serializable
+public class Label extends BaseEntity
 {
     private Long id;
     private String name;
-    private Integer status;
-    private Integer createTime;
-    private Integer updateTime;
 }

@@ -7,8 +7,10 @@ package com.novel.common.dto.book;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class TypeDto
+public class TypeDto implements Serializable
 {
     private Long id;
     private Long pid;

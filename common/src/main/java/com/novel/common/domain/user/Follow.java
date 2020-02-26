@@ -5,17 +5,13 @@
  */
 package com.novel.common.domain.user;
 
+import com.novel.common.domain.BaseEntity;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class Follow implements Serializable
+public class Follow extends BaseEntity
 {
     private Long id;
     private Integer followId;
     private Integer fansId;
-    private Integer status;
-    private Integer createTime;
-    private Integer updateTime;
 }

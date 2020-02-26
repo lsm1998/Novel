@@ -5,12 +5,11 @@
  */
 package com.novel.common.domain.im;
 
+import com.novel.common.domain.BaseEntity;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class Msg implements Serializable
+public class Msg extends BaseEntity
 {
     // 消息ID
     private int id;
@@ -24,10 +23,4 @@ public class Msg implements Serializable
     private int toId;
     // 消息内容
     private String content;
-    // 是否删除
-    private Integer status;
-    // 创建时间
-    private Integer createTime;
-    // 更新时间
-    private Integer updateTime;
 }

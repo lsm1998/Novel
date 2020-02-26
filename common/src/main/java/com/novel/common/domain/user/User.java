@@ -5,12 +5,13 @@
  */
 package com.novel.common.domain.user;
 
+import com.novel.common.domain.BaseEntity;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
-public class User implements Serializable
+public class User extends BaseEntity
 {
     private Long id;
     private Integer uid;
@@ -20,7 +21,4 @@ public class User implements Serializable
     private String salt;
     private Integer type;
     private String publicKey;
-    private Integer status;
-    private Integer createTime;
-    private Integer updateTime;
 }

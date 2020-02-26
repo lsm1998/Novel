@@ -59,6 +59,8 @@
         <servlet.version>4.0.1</servlet.version>
         <netty.version>4.1.44.Final</netty.version>
         <mybatisplus.version>3.3.0</mybatisplus.version>
+        <reflectasm.version>1.11.9</reflectasm.version>
+        <jjwt.version>0.6.0</jjwt.version>
     </properties>
 
     <dependencies>
@@ -122,7 +124,7 @@
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
-            <version>0.6.0</version>
+            <version>${jjwt.version}</version>
         </dependency>
 
         <dependency>
@@ -149,6 +151,12 @@
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
             <version>${protobuf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>reflectasm</artifactId>
+            <version>${reflectasm.version}</version>
         </dependency>
     </dependencies>
 

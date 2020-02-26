@@ -5,18 +5,14 @@
  */
 package com.novel.common.domain.user;
 
+import com.novel.common.domain.BaseEntity;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class Recharge implements Serializable
+public class Recharge extends BaseEntity
 {
     private Long id;
     private Integer uid;
     private Long amount;
     private Integer type;
-    private Integer status;
-    private Integer createTime;
-    private Integer updateTime;
 }

@@ -5,6 +5,9 @@
  */
 package com.novel.book.service;
 
+import com.novel.user.service.RPCBookService;
+
 public interface BookService extends RPCBookService
 {
+
 }
