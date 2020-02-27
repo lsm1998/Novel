@@ -29,6 +29,7 @@
         <module>book/book-api</module>
         <module>im/im-api</module>
         <module>im/im-service</module>
+        <module>admin</module>
     </modules>
 
     <properties>
