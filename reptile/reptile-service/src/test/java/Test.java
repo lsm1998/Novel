@@ -13,14 +13,26 @@ public class Test
     private static final Random RANDOM=new Random();
 
     @org.junit.Test
+    public void url()
+    {
+        String url = String.format("http://book.zongheng.com/book/%s.html", 123438);
+        Document document = getHtmlTextByUrl(url);
+        document.select("a").forEach(e ->
+        {
+            if(e.text().equals("开始阅读"))
+            {
+                getBookChapter(e.attr("href"));
+            }
+        });
+    }
+
+    @org.junit.Test
     public void test()
     {
         Map<String, String> chapterMap = search("苦涯", 2);
         chapterMap.forEach((k,v)->
         {
-            System.out.println("开始爬取小说："+v);
-            getBookChapter(k);
-            System.out.println("小说："+v+"，爬取完毕");
+
         });
     }
 
