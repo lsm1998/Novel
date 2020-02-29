@@ -1,21 +1,19 @@
 spring:
   application:
-    name: novel-api-gateway
-
-nacos:
-  service-address: 114.116.239.108
-  port: 8848
-dubbo:
-  application:
-    logger: log4j2
-  registry:
-    address: nacos://${nacos.service-address}:${nacos.port}
+    name: novel-admin
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.95.239.29:3306/novel?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 10
+    minIdle: 10
+    maxActive: 20
+    maxWait: 6000
+    validationQuery: SELECT 1 FROM DUAL
+    filters: stat,wall
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
 
 server:
-  port: 8080
-
-address:
-  white:
-    list: 127.0.0.1,192.168.31.21
-  black:
-    list: 127.0.0.2,192.168.146.21
+  port: 12306

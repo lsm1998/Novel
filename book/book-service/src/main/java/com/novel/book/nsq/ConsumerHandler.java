@@ -5,9 +5,7 @@
  */
 package com.novel.book.nsq;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.segments.MergeSegments;
 import com.novel.book.mapper.BookMapper;
 import com.novel.book.mapper.ChapterMapper;
 import com.novel.common.domain.book.Book;

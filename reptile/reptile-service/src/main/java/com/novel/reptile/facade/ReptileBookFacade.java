@@ -14,9 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
 import java.util.*;
 
 @Component
@@ -49,6 +46,7 @@ public class ReptileBookFacade
                 if (!document.select("title").first().text().equals(NOT_FIND_STR))
                 {
                     Book book = getBookInfoByUrl(document);
+                    System.out.println(book);
                     List<Chapter> chapterList = getChapterListByUrl(url);
                     int sort=1;
                     for (Chapter c:chapterList)
@@ -56,7 +54,6 @@ public class ReptileBookFacade
                         c.setId(snowflake.nextId());
                         c.setBookId(book.getId());
                         c.setSorted(sort++);
-                        System.out.println(c.getCreateTime());
                     }
                 }
             }

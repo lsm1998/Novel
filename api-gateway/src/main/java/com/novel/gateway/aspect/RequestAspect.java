@@ -15,6 +15,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -29,6 +30,7 @@ public class RequestAspect
 
     /**
      * 基于方法通配符的普通方法拦截
+     *
      * @throws Throwable
      */
     @AfterReturning("execution(public * com.novel.gateway.handler.*.*(..))")
@@ -47,6 +49,7 @@ public class RequestAspect
 
     /**
      * 基于注解的连接点拦截
+     *
      * @param joinPoint
      * @param result
      * @return
@@ -55,25 +58,30 @@ public class RequestAspect
     @AfterReturning(returning = "result", pointcut = "@annotation(com.novel.gateway.aspect.annotation.LogInterceptJoinPoint)")
     public Object AfterExec(JoinPoint joinPoint, Object result) throws Throwable
     {
-        Class clazz = joinPoint.getSignature().getDeclaringType();
+        Class<?> clazz = joinPoint.getSignature().getDeclaringType();
         String methodName = joinPoint.getSignature().getName();
+        Object code = null;
+        if (result instanceof Map)
+        {
+            code = ((Map) result).get("code");
+        }
         if (clazz == UserHandler.class && "login".equals(methodName))
         {
-            if (result.equals(ResultUtil.error("登录失败")))
-            {
-                System.out.println("登录失败");
-            } else
+            if (code.equals(0))
             {
                 System.out.println("登录成功");
+            } else
+            {
+                System.out.println("登录失败");
             }
         } else if (clazz == UserHandler.class && "register".equals(methodName))
         {
-            if (result.equals(ResultUtil.error("注册失败")))
-            {
-                System.out.println("注册失败");
-            } else
+            if (code.equals(0))
             {
                 System.out.println("注册成功");
+            } else
+            {
+                System.out.println("注册失败");
             }
         }
         System.out.println("result=" + result);
